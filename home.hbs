@@ -20,6 +20,12 @@ into the {body} of the default.hbs template --}}
                                         </div>
                                   {{/if}}
                                   
+                                  {{#if @custom.show_sidebar_on_post}}
+                                        <div class="sidebar-column {{#unless @custom.show_related_posts}}col-lg-4{{else}}col-lg-3{{/unless}} hidden-xs hidden-sm hidden-md">
+                                                {{> widgets/widgets}}
+                                        </div>
+                                   {{/if}}
+                                  
                          </div> 
                 </div> 
             </div> 
