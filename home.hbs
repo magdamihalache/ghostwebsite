@@ -9,9 +9,17 @@ into the {body} of the default.hbs template --}}
                 <div class="row">
                         <div class="content-column col-lg-8{{#if @custom.show_sidebar_on_post}}{{#if @custom.show_related_posts}} col-lg-6{{/if}}{{/if}}{{#unless @custom.show_sidebar_on_post}}{{#unless @custom.show_related_posts}} shift{{/unless}}{{/unless}}">
                                  <div class="content-area">
-                                 <h2>{{title}}</h2>
+                                        <h2>{{title}}</h2>
                                         {{content}}
-                                </div> 
+                                  </div> 
+                                  
+                                  
+                                  {{#if @custom.show_related_posts}}
+                                        <div class="related-column {{#unless @custom.show_sidebar_on_post}}col-lg-4{{else}}col-lg-3{{/unless}} hidden-xs hidden-sm hidden-md">
+                                                {{> related}}
+                                        </div>
+                                  {{/if}}
+                                  
                          </div> 
                 </div> 
             </div> 
