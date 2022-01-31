@@ -5,11 +5,16 @@ into the {body} of the default.hbs template --}}
 {{!-- Main --}}
 <main id="main">
         {{#page}}
-        
             <div class="container">
                 <h2>{{title}}</h2>
                 {{content}}
             </div>  
+            
+            {{#if @custom.show_sidebar_on_post}}
+            <div class="sidebar-column {{#unless @custom.show_related_posts}}col-lg-4{{else}}col-lg-3{{/unless}} hidden-xs hidden-sm hidden-md">
+                {{> widgets/widgets}}
+            </div>
+        {{/if}}
                 
         
         {{/page}}
